@@ -3254,10 +3254,16 @@ section {
     opacity: 1;
   }
 
-  /* Select-Dropdown Pfeil dunkel */
+  /* Select-Dropdown Pfeil dunkel — EINMAL, nicht gekachelt */
   .booking-form-modern select {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background-color: #fff !important;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a1a1a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
     background-position: right 0.9rem center !important;
+    background-size: 1.1em !important;
     padding-right: 2.5rem !important;
   }
   .booking-form-modern select option {
