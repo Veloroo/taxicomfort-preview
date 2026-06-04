@@ -1,0 +1,420 @@
+<section class="booking-section-modern">
+  <div class="booking-container">
+    <div class="booking-content">
+      <div class="booking-text">
+        <span class="booking-label" data-i18n="booking_looking"
+          >Looking for a taxi?</span
+        >
+        <h2 data-i18n="booking_make_booking">Make your booking</h2>
+        <p data-i18n="booking_description">
+          Our taxis commit to make your trips unique by best answering your
+          needs.
+        </p>
+      </div>
+
+      <div class="booking-form-wrapper">
+        <form
+          class="booking-form-modern"
+          id="booking-form-modern"
+          action="https://formspree.io/f/xaqdjzgj"
+          method="POST"
+          novalidate
+          onsubmit="return false;"
+        >
+          <!-- Spielberg Aktion Banner (only visible if ?aktion=spielberg) -->
+          <div id="spielberg-aktion-banner" class="spielberg-aktion-banner" style="display:none">
+            <span class="spielberg-aktion-flag">🏁</span>
+            <div>
+              <strong>Spielberg Race Weekend Aktion aktiv</strong>
+              <p>Graz → Spielberg · €200 Fixpreis inkl. Maut</p>
+            </div>
+          </div>
+          <input type="hidden" id="booking-aktion" name="aktion" value="" />
+          <input type="hidden" id="booking-subject" name="_subject" value="Neue Buchungsanfrage – Taxi Comfort" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="booking-name" data-i18n="booking_name"
+                >Full Name *</label
+              >
+              <input
+                type="text"
+                id="booking-name"
+                name="name"
+                required
+                placeholder="Max Mustermann"
+              />
+            </div>
+            <div class="form-group">
+              <label for="booking-email" data-i18n="booking_email"
+                >Email Address *</label
+              >
+              <input
+                type="email"
+                id="booking-email"
+                name="email"
+                required
+                placeholder="max@beispiel.at"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="booking-phone" data-i18n="booking_label_phone"
+                >Phone Number *</label
+              >
+              <input
+                type="tel"
+                id="booking-phone"
+                name="phone"
+                required
+                placeholder="+43 664 3588730"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                for="booking-passengers"
+                data-i18n="booking_label_passengers"
+                >Passengers *</label
+              >
+              <select id="booking-passengers" name="passengers" required>
+                <option value="" data-i18n="booking_select_passengers">
+                  Select
+                </option>
+                <option value="1" data-i18n="booking_passengers_1">
+                  1 Passenger
+                </option>
+                <option value="2" data-i18n="booking_passengers_2">
+                  2 Passengers
+                </option>
+                <option value="3" data-i18n="booking_passengers_3">
+                  3 Passengers
+                </option>
+                <option value="4" data-i18n="booking_passengers_4">
+                  4 Passengers
+                </option>
+                <option value="5" data-i18n="booking_passengers_5">
+                  5 Passengers (+€2.70)
+                </option>
+                <option value="6" data-i18n="booking_passengers_6">
+                  6 Passengers (+€5.40)
+                </option>
+                <option value="7" data-i18n="booking_passengers_7">
+                  7 Passengers (+€8.10)
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="booking-pickup" data-i18n="booking_label_pickup"
+                >Pick-up Location *</label
+              >
+              <input
+                type="text"
+                id="booking-pickup"
+                name="pickup"
+                required
+                data-i18n-placeholder="booking_placeholder_pickup"
+                placeholder="e.g. Hauptplatz 1, Graz"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                for="booking-destination"
+                data-i18n="booking_label_destination"
+                >Destination *</label
+              >
+              <input
+                type="text"
+                id="booking-destination"
+                name="destination"
+                required
+                data-i18n-placeholder="booking_placeholder_destination"
+                placeholder="e.g. Graz Airport"
+              />
+            </div>
+          </div>
+
+          <!-- Location Error Message -->
+          <div
+            id="location-error"
+            class="location-error-message"
+            style="display: none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <div class="error-content">
+              <strong data-i18n="booking_error_location_title"
+                >Location not found</strong
+              >
+              <p id="location-error-message">
+                Please check your spelling or try a different address format.
+              </p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="booking-date" data-i18n="booking_label_date"
+                >Date *</label
+              >
+              <input type="date" id="booking-date" name="date" required />
+            </div>
+            <div class="form-group">
+              <label for="booking-time" data-i18n="booking_label_time"
+                >Time *</label
+              >
+              <select id="booking-time" name="time" required>
+                <option value="" data-i18n="booking_select_time">
+                  Select time
+                </option>
+                <option value="00:00">00:00</option>
+                <option value="00:15">00:15</option>
+                <option value="00:30">00:30</option>
+                <option value="00:45">00:45</option>
+                <option value="01:00">01:00</option>
+                <option value="01:15">01:15</option>
+                <option value="01:30">01:30</option>
+                <option value="01:45">01:45</option>
+                <option value="02:00">02:00</option>
+                <option value="02:15">02:15</option>
+                <option value="02:30">02:30</option>
+                <option value="02:45">02:45</option>
+                <option value="03:00">03:00</option>
+                <option value="03:15">03:15</option>
+                <option value="03:30">03:30</option>
+                <option value="03:45">03:45</option>
+                <option value="04:00">04:00</option>
+                <option value="04:15">04:15</option>
+                <option value="04:30">04:30</option>
+                <option value="04:45">04:45</option>
+                <option value="05:00">05:00</option>
+                <option value="05:15">05:15</option>
+                <option value="05:30">05:30</option>
+                <option value="05:45">05:45</option>
+                <option value="06:00">06:00</option>
+                <option value="06:15">06:15</option>
+                <option value="06:30">06:30</option>
+                <option value="06:45">06:45</option>
+                <option value="07:00">07:00</option>
+                <option value="07:15">07:15</option>
+                <option value="07:30">07:30</option>
+                <option value="07:45">07:45</option>
+                <option value="08:00">08:00</option>
+                <option value="08:15">08:15</option>
+                <option value="08:30">08:30</option>
+                <option value="08:45">08:45</option>
+                <option value="09:00">09:00</option>
+                <option value="09:15">09:15</option>
+                <option value="09:30">09:30</option>
+                <option value="09:45">09:45</option>
+                <option value="10:00">10:00</option>
+                <option value="10:15">10:15</option>
+                <option value="10:30">10:30</option>
+                <option value="10:45">10:45</option>
+                <option value="11:00">11:00</option>
+                <option value="11:15">11:15</option>
+                <option value="11:30">11:30</option>
+                <option value="11:45">11:45</option>
+                <option value="12:00">12:00</option>
+                <option value="12:15">12:15</option>
+                <option value="12:30">12:30</option>
+                <option value="12:45">12:45</option>
+                <option value="13:00">13:00</option>
+                <option value="13:15">13:15</option>
+                <option value="13:30">13:30</option>
+                <option value="13:45">13:45</option>
+                <option value="14:00">14:00</option>
+                <option value="14:15">14:15</option>
+                <option value="14:30">14:30</option>
+                <option value="14:45">14:45</option>
+                <option value="15:00">15:00</option>
+                <option value="15:15">15:15</option>
+                <option value="15:30">15:30</option>
+                <option value="15:45">15:45</option>
+                <option value="16:00">16:00</option>
+                <option value="16:15">16:15</option>
+                <option value="16:30">16:30</option>
+                <option value="16:45">16:45</option>
+                <option value="17:00">17:00</option>
+                <option value="17:15">17:15</option>
+                <option value="17:30">17:30</option>
+                <option value="17:45">17:45</option>
+                <option value="18:00">18:00</option>
+                <option value="18:15">18:15</option>
+                <option value="18:30">18:30</option>
+                <option value="18:45">18:45</option>
+                <option value="19:00">19:00</option>
+                <option value="19:15">19:15</option>
+                <option value="19:30">19:30</option>
+                <option value="19:45">19:45</option>
+                <option value="20:00">20:00</option>
+                <option value="20:15">20:15</option>
+                <option value="20:30">20:30</option>
+                <option value="20:45">20:45</option>
+                <option value="21:00">21:00</option>
+                <option value="21:15">21:15</option>
+                <option value="21:30">21:30</option>
+                <option value="21:45">21:45</option>
+                <option value="22:00">22:00</option>
+                <option value="22:15">22:15</option>
+                <option value="22:30">22:30</option>
+                <option value="22:45">22:45</option>
+                <option value="23:00">23:00</option>
+                <option value="23:15">23:15</option>
+                <option value="23:30">23:30</option>
+                <option value="23:45">23:45</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="booking-vehicle" data-i18n="booking_label_vehicle"
+                >Preferred Vehicle</label
+              >
+              <select id="booking-vehicle" name="vehicle">
+                <option value="" data-i18n="booking_vehicle_none">
+                  No Preference
+                </option>
+                <option value="toyota-rav4" data-i18n="booking_vehicle_rav4">
+                  Toyota RAV4 (SUV)
+                </option>
+                <option value="ford-galaxy" data-i18n="booking_vehicle_galaxy">
+                  Ford Galaxy (7-seater)
+                </option>
+                <option
+                  value="ford-explorer"
+                  data-i18n="booking_vehicle_explorer"
+                >
+                  Ford Explorer (Electric SUV)
+                </option>
+                <option value="ford-kuga" data-i18n="booking_vehicle_kuga">
+                  Ford Kuga (SUV)
+                </option>
+                <option value="chery-tiggo9" data-i18n="booking_vehicle_tiggo9">
+                  Chery Tiggo 9 Super Hybrid (7-Sitzer)
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label
+                for="booking-distance-display"
+                data-i18n="booking_label_distance"
+                >Estimated Distance</label
+              >
+              <input
+                type="text"
+                id="booking-distance-display"
+                name="distance-display"
+                readonly
+                data-i18n-placeholder="booking_placeholder_distance_auto"
+                placeholder="Automatisch berechnet"
+              />
+              <input type="hidden" id="booking-distance" name="distance" />
+              <input
+                type="hidden"
+                id="booking-estimated-price"
+                name="estimated-price"
+              />
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="booking-message" data-i18n="booking_label_message"
+              >Additional Information</label
+            >
+            <textarea
+              id="booking-message"
+              name="message"
+              rows="3"
+              data-i18n-placeholder="booking_placeholder_message"
+              placeholder="z.B. Gepäckstücke, besondere Wünsche, Kindersitz benötigt..."
+            ></textarea>
+          </div>
+
+          <!-- Price Estimate Section -->
+          <div
+            id="price-estimate"
+            class="price-estimate-box"
+            style="display: none"
+          >
+            <div class="price-estimate-header">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+              <h3 data-i18n="booking_price_estimate_title">Estimated Price</h3>
+            </div>
+            <div class="price-estimate-amount">
+              <span class="price-label" data-i18n="booking_price_from"
+                >From</span
+              >
+              <span class="price-value" id="estimated-price">€0</span>
+            </div>
+            <div class="price-estimate-disclaimer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              <p data-i18n="booking_price_estimate_note">
+                This is a preliminary estimate. After submitting your booking,
+                you will receive a detailed final offer via phone or email.
+              </p>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+              </svg>
+              <span data-i18n="booking_submit">Book Now</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

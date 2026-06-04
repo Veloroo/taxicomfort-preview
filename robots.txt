@@ -1,0 +1,12 @@
+# robots.txt for Taxi Comfort - www.taxicomfort.at
+
+User-agent: *
+Allow: /
+Disallow: /test-*.html
+Disallow: /assets/slide_show/
+
+# Sitemaps
+Sitemap: https://www.taxicomfort.at/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
