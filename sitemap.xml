@@ -6,32 +6,60 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://www.taxicomfort.at/</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://taxicomfort.at/</loc>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Main Pages -->
+  <!-- Buchung (wichtigste Conversion-Seite) -->
   <url>
-    <loc>https://www.taxicomfort.at/about.html</loc>
-    <lastmod>2026-02-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.taxicomfort.at/booking.html</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://taxicomfort.at/booking.html</loc>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
+  <!-- Über uns -->
   <url>
-    <loc>https://www.taxicomfort.at/contact.html</loc>
-    <lastmod>2026-02-24</lastmod>
+    <loc>https://taxicomfort.at/about.html</loc>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Kontakt -->
+  <url>
+    <loc>https://taxicomfort.at/contact.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Rechtliches -->
+  <url>
+    <loc>https://taxicomfort.at/impressum.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://taxicomfort.at/datenschutz.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://taxicomfort.at/agb.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://taxicomfort.at/cookie-richtlinien.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
 </urlset>
