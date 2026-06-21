@@ -20,6 +20,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Lokale Landingpages (Einsatzgebiete) -->
+  <url>
+    <loc>https://taxicomfort.at/taxi-seiersberg.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- Über uns -->
   <url>
     <loc>https://taxicomfort.at/about.html</loc>
